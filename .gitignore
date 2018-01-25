@@ -1,4 +1,5 @@
 *.txt
 *.cpp
 *.c
-output.md
+*.md
+!README.md
