@@ -5,7 +5,7 @@
 # Python comment parser and todo list generator
 
 import re
-import sys
+from sys import exit
 from sys import argv
 
 if __name__ == "__main__":
@@ -25,23 +25,23 @@ if __name__ == "__main__":
 
     # Dictionary of all todo items
     keywords = [
-            'TODO:',
-            'FIXME:',
-            'WTF:'
-            ] # Add keywords here
+        'TODO:',
+        'FIXME:',
+        'WTF:',
+    ] # Add keywords here
     todos = dict((keywords[i], []) for i in range(len(keywords)))
 
     # Find out what comment syntax was used
     comment_types = {
-            'cpp': '//', 	    # C++
-            'c': '//',	    # C
-            'java': '//',	    # Java
-            'js': '//',	    # JavaScript
-            'py': '#',	    # Python
-            'sh': '#',	    # Bash shell scripts
-            'hs': '--',	    # Haskell
-            'lhs': '--'	    # Haskell
-            } # Add languages here
+        'cpp': '//',        # C++
+        'c': '//',	    # C
+        'java': '//',       # Java
+        'js': '//',	    # JavaScript
+        'py': '#',	    # Python
+        'sh': '#',	    # Bash shell scripts
+        'hs': '--',	    # Haskell
+        'lhs': '--',        # Haskell
+    } # Add languages here
 
     # Get block comment regex
     block_comment_regex = {
